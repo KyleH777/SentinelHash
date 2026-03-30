@@ -1,5 +1,6 @@
 package com.sentinelhash.controller;
 
+import com.sentinelhash.config.SecurityConfig;
 import com.sentinelhash.dto.FileVerifyResponse;
 import com.sentinelhash.exception.IntegrityMismatchedException;
 import com.sentinelhash.model.FileRecord;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
@@ -26,6 +28,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(FileController.class)
+@Import(SecurityConfig.class)
 class FileControllerTest {
 
     @Autowired
@@ -125,7 +128,7 @@ class FileControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "sentinel", roles = "USER")
+    @WithAnonymousUser
     void verify_shouldBePubliclyAccessible_withoutAuth() throws Exception {
         FileVerifyResponse verifyResponse = FileVerifyResponse.builder()
                 .recordId(1L)
