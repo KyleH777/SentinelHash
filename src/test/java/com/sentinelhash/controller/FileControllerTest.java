@@ -138,7 +138,8 @@ class FileControllerTest {
         mockMvc.perform(multipart("/api/files/verify")
                         .file(validFile)
                         .param("id", "1")
-                        .with(csrf()))
+                        .with(csrf())
+                        .with(anonymous()))
                 .andExpect(status().isOk());
     }
 }
