@@ -1,5 +1,3 @@
-cat >> /Users/kyleharrington/Desktop/AI/SentinelHash/README.md << 'EOF'
-
 ## 🔍 Visual Proof
 
 ### 🔒 Security Blocking an Unauthorized User
