@@ -81,6 +81,7 @@ class FileControllerTest {
     }
 
     @Test
+    @WithMockUser(username = "sentinel", roles = "USER")
     void verify_shouldReturn200_whenFileIsIntact() throws Exception {
         FileVerifyResponse verifyResponse = FileVerifyResponse.builder()
                 .recordId(1L)
@@ -103,6 +104,7 @@ class FileControllerTest {
     }
 
     @Test
+    @WithMockUser(username = "sentinel", roles = "USER")
     void verify_shouldReturn409_whenFileIsTampered() throws Exception {
         String tamperedHash = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
