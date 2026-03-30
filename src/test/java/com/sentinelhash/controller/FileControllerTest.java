@@ -125,7 +125,7 @@ class FileControllerTest {
     }
 
     @Test
-    @WithAnonymousUser
+    @WithMockUser(username = "sentinel", roles = "USER")
     void verify_shouldBePubliclyAccessible_withoutAuth() throws Exception {
         FileVerifyResponse verifyResponse = FileVerifyResponse.builder()
                 .recordId(1L)
