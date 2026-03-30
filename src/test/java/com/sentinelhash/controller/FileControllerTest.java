@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -124,6 +125,7 @@ class FileControllerTest {
     }
 
     @Test
+    @WithAnonymousUser
     void verify_shouldBePubliclyAccessible_withoutAuth() throws Exception {
         FileVerifyResponse verifyResponse = FileVerifyResponse.builder()
                 .recordId(1L)
