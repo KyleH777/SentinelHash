@@ -4,7 +4,9 @@
 When an unauthenticated user attempts to access a protected endpoint,
 the system returns a `401 Unauthorized` response.
 
-![401 Unauthorized](docs/401-unauthorized.png)
+!<img width="570" height="293" alt="Screenshot 2026-03-30 at 5 33 57 PM" src="https://github.com/user-attachments/assets/be0b33cc-3333-44fa-ae61-8ecc56b00aaf" />
+
+
 
 ---
 
@@ -12,7 +14,8 @@ the system returns a `401 Unauthorized` response.
 When a file has been tampered with, SentinelHash detects the hash mismatch
 and returns a `409 Conflict` response.
 
-![Failed Integrity Check](docs/failed-integrity.png)
+!<img width="574" height="313" alt="Screenshot 2026-03-30 at 5 39 31 PM" src="https://github.com/user-attachments/assets/1f7fec3c-080d-4990-ae1c-9b6d4732ecfa" />
+
 
 ---
 
