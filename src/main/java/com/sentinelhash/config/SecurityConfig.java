@@ -28,7 +28,7 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/h2-console/**").permitAll()
-                .requestMatchers(HttpMethod.POST, "/api/files/verify").permitAll()
+                .requestMatchers("/api/files/verify").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/files/upload").authenticated()
                 .anyRequest().authenticated()
             )
